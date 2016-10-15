@@ -38,6 +38,10 @@ ul, li {
   width: 100%;
   max-width: 700px; }
 
+#hero-wrap {
+  height: 100%;
+  width: 100%; }
+
 #demo {
   display: -webkit-box;
   display: flex;
@@ -45,12 +49,11 @@ ul, li {
           justify-content: center;
   width: 100%; }
 
-#img-wrap {
+.img-wrap {
   width: 100%;
-  max-width: 580px;
-  max-height: 470px; }
+  max-width: 580px; }
 
-#img-wrap > img {
+.img-wrap > img {
   width: 100%;
   min-height: 100%;
   min-width: 100%; }
