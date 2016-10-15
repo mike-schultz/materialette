@@ -11,5 +11,5 @@
 <path opacity="0.7" fill="#F50057" d="M316.404,216.549c0,56.277-45.609,101.885-101.885,101.885
 	c-56.276,0-101.886-45.608-101.886-101.885c0-56.255,45.61-101.875,101.886-101.875
 	C270.795,114.673,316.404,160.293,316.404,216.549z"/>
-<text transform="matrix(1 0 0 1 346.4014 216.5488)" font-family="'Roboto-ThinItalic'" font-size="134.1762">Materialette</text>
+<text transform="matrix(1 0 0 1 346.4014 216.5488)" font-family="'Roboto" font-weight="100" font-style="italic" font-size="134.1762">Materialette</text>
 </svg>
