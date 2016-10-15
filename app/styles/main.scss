@@ -105,7 +105,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   padding: 10px 20px;
-  user-select: none;
+  -webkit-user-select: none;
 }
 .hidden {
   opacity: 0;

@@ -373,8 +373,8 @@ document.body.addEventListener('mousemove', e => {
   if (offsetY < 0) {
     offsetY = e.clientY + 25;
   }
-  tooltip.style.top = offsetY;
-  tooltip.style.left = offsetX;
+  tooltip.style.top = offsetY + 'px';
+  tooltip.style.left = offsetX + 'px';
   tooltip.className = "";
 });
 

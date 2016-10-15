@@ -19,12 +19,16 @@ body {
   position: relative; }
 
 #curtain {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   text-align: center;
   position: fixed;
-  flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   width: 370px;
   height: 380px;
   z-index: 2;
@@ -33,25 +37,33 @@ body {
   transition: all 1s; }
 
 #key {
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
-  flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   height: 60px;
   width: 80px;
   right: 0;
   bottom: 0; }
 
 #key > div {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   text-align: center;
   height: 100%; }
 
 #tooltip {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   text-align: center;
   position: fixed;
   width: 140px;
@@ -60,6 +72,25 @@ body {
   left: 0;
   padding: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+#clipboard {
+  position: fixed;
+  z-index: -1;
+  top: -370px; }
+
+#controls {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  background-color: #455A64;
+  height: 30px;
+  font-size: 14px;
+  padding: 2px; }
 
 .cell {
   width: 20px;
@@ -70,6 +101,7 @@ body {
   border: 1px solid #000; }
 
 .row {
+  display: -ms-flexbox;
   display: flex;
   width: 100%; }
 
@@ -80,27 +112,12 @@ body {
 .color {
   cursor: pointer; }
 
-#clipboard {
-  position: fixed;
-  z-index: -1;
-  top: -370px; }
-
-#controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #455A64;
-  height: 30px;
-  font-size: 14px;
-  padding: 2px; }
-
 .arrow {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
   padding: 10px 20px;
-  user-select: none; }
+  -webkit-user-select: none; }
 
 .hidden {
   opacity: 0;

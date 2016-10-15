@@ -4,7 +4,7 @@
   "description": "Material Color Palette for OSX",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/electron .",
+    "start": "./node_modules/.bin/electron app/",
     "build": "npm run build:macos",
     "build:macos": "electron-packager . --overwrite --asar --out=dist --platform=darwin --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Materialette-darwin-x64 && zip -ryXq9 ../Materialette-${npm_package_version}.zip Materialette.app"
   },
@@ -15,22 +15,6 @@
   "author": "Mike Schultz",
   "url": "https://github.com/mike-schultz",
   "license": "MIT",
-  "build": {
-    "appId": "org.mikeschultz.materialette",
-    "compression": "maximum",
-    "app-category-type": "public.app-category.graphics-design",
-    "dmg": {
-      "contents": [{
-        "x": 110,
-        "y": 150
-      }, {
-        "x": 240,
-        "y": 150,
-        "type": "link",
-        "path": "/Applications"
-      }]
-    }
-  },
   "dependencies": {
     "menubar": "^5.1.0"
   },
