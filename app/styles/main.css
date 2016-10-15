@@ -19,51 +19,54 @@ body {
   position: relative; }
 
 #curtain {
-  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   text-align: center;
   position: fixed;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   width: 370px;
   height: 380px;
   z-index: 2;
   font-size: 2em;
   background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 1s;
   transition: all 1s; }
 
 #key {
-  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   position: absolute;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   height: 60px;
   width: 80px;
   right: 0;
   bottom: 0; }
 
 #key > div {
-  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   text-align: center;
   height: 100%; }
 
 #tooltip {
-  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   text-align: center;
   position: fixed;
   width: 140px;
@@ -79,14 +82,14 @@ body {
   top: -370px; }
 
 #controls {
-  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-align: center;
-      align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  justify-content: space-around;
+  -webkit-box-align: center;
+          align-items: center;
   background-color: #455A64;
   height: 30px;
   font-size: 14px;
@@ -101,7 +104,7 @@ body {
   border: 1px solid #000; }
 
 .row {
-  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   width: 100%; }
 

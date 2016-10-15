@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Roboto';
+}
+h2 {
+  text-align: center;
+  font-family: 'Roboto-Thin';
+  font-weight: 100;
+  font-size: 2.5em;
+  margin: 0 1em 1em;
+}
+h3 {
+  color: #F50057;
+  margin: 0.5em 0;
+}
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  margin:0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#wrapper {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hero {
+  width: 100%;
+  max-width: 700px;
+}
+
+#demo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#img-wrap {
+  width: 100%;
+  max-width: 580px;
+  max-height: 470px;
+}
+
+#img-wrap>img {
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1em;
+  flex-wrap: wrap-reverse;
+}
+#nav div + div {
+  margin-bottom: 1em;
+}
+#platforms {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0 0 1em;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.5em 1em;
+  color: white;
+  font-size: 1.3em;
+  width: 220px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  margin: 0 0.5em;
+}
+
+.button.teal {
+  background-color: #00BCD4;
+}
+
+.button:hover {
+  background-color: #F50057;
+}
+
+.button.teal-outline {
+  background-color: transparent;
+  border: 1px solid #00BCD4;
+  color: #00BCD4;
+}
+
+.button.teal-outline:hover {
+  border: 1px solid #F50057;
+  color: #F50057;
+}
