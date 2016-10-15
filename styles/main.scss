@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+$cellHeight: 20px;
+$cellWidth: 20px;
+$gutterWidth: 90px;
+$headerHeight: 30px;
+$numCells: 14;
+$numColors: 19;
+$containerWidth: ($cellWidth * $numCells) + $gutterWidth;
+$containerHeight: ($numColors * $cellHeight) + $headerHeight;
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  color: #fff;
+  font-size: 13px;
+  margin: 0;
+  width: $containerWidth;
+  max-width: $containerWidth;
+  height: $containerHeight;
+  overflow: hidden;
+}
+#container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#curtain {
+  @include flex-center();
+  position: fixed;
+  flex-direction: column;
+  width: $containerWidth;
+  height: $containerHeight - $headerHeight;
+  z-index: 2;
+  font-size: 2em;
+  background-color: rgba(0,0,0,0.7);
+  transition: all 1s;
+}
+#key {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  height: 60px;
+  width: 80px;
+  right: 0;
+  bottom: 0;
+}
+#key > div {
+  @include flex-center();
+  height: 100%;
+}
+#tooltip {
+  @include flex-center();
+  position: fixed;
+  width: 140px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#clipboard {
+  position: fixed;
+  z-index: -1;
+  top: -$containerWidth;
+}
+#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #455A64;
+  height: $headerHeight;
+  font-size: 14px;
+  padding: 2px;
+}
+.cell {
+  width: $cellHeight;
+  height: $cellWidth;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+.cell:hover {
+  border: 1px solid #000;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+.gutter.cell {
+  width: $gutterWidth;
+  text-align: center;
+}
+.color {
+  cursor: pointer;
+}
+.arrow {
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 20px;
+  user-select: none;
+}
+.hidden {
+  opacity: 0;
+  z-index: -1 !important;
+}

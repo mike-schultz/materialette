@@ -1,0 +1,35 @@
+<! DOCTYPE html>
+<html>
+
+<head>
+  <title>Materialette</title>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+
+  <div id="container">
+    <section id="controls">
+      <div class="arrow" onclick="changeOutput()">&lt;</div>
+      <div id="current-output">HEX</div>
+      <div class="arrow" onclick="changeOutput()">&gt;</div>
+    </section>
+
+    <div id="key">
+      <div class="color" style="background-color:#FFF; color: #000;"> white </div>
+      <div class="color" style="background-color:#000" color: #FFF> black </div>
+    </div>
+
+    <div id="tooltip" class="hidden">
+      Color
+    </div>
+    <textarea id="clipboard"></textarea>
+    <div id="curtain" class="hidden">
+      <div id="color-copied">#FFFFFF</div>
+      <br> Copied to the clipboard</div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

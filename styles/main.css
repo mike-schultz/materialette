@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  color: #fff;
+  font-size: 13px;
+  margin: 0;
+  width: 370px;
+  max-width: 370px;
+  height: 410px;
+  overflow: hidden; }
+
+#container {
+  height: 100%;
+  width: 100%;
+  position: relative; }
+
+#curtain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  flex-direction: column;
+  width: 370px;
+  height: 380px;
+  z-index: 2;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 1s; }
+
+#key {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  height: 60px;
+  width: 80px;
+  right: 0;
+  bottom: 0; }
+
+#key > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%; }
+
+#tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  width: 140px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.25); }
+
+.cell:hover {
+  border: 1px solid #000; }
+
+.row {
+  display: flex;
+  width: 100%; }
+
+.gutter.cell {
+  width: 90px;
+  text-align: center; }
+
+.color {
+  cursor: pointer; }
+
+#clipboard {
+  position: fixed;
+  z-index: -1;
+  top: -370px; }
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #455A64;
+  height: 30px;
+  font-size: 14px;
+  padding: 2px; }
+
+.arrow {
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 20px;
+  user-select: none; }
+
+.hidden {
+  opacity: 0;
+  z-index: -1 !important; }
