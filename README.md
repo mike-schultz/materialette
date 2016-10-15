@@ -1,4 +1,4 @@
-<img src="https://mike-schultz.github.io/materialette/assets/banner.svg" alt="materialette" description="Material design">
+<img src="https://mike-schultz.github.io/materialette/assets/banner.png" alt="materialette" description="Material design">
 <p align="center"> <img src="https://mike-schultz.github.io/materialette/assets/demo.gif" alt="materialette" description="Material design"></p>
 # Materialette
 Easily access every color in [Google's material design palette](https://material.google.com/style/color.html) from your OS dock. 
