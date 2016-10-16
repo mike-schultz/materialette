@@ -6,8 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/electron .",
-    "build": "npm run build:macos && npm run build:windows",
+    "build": "npm run build:macos",
     "build:macos": "electron-packager . --overwrite --asar --out=dist --platform=darwin --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Materialette-darwin-x64 && zip -ryXq9 ../Materialette-${npm_package_version}.zip Materialette.app"
+  },
   "keywords": [
     "material",
     "electron"
