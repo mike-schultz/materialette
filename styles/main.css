@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
 * {
   box-sizing: border-box; }
 
 html,
 body {
-  font-family: 'Roboto', Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #fff;
   font-size: 13px;
   margin: 0;
