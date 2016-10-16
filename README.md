@@ -1,9 +1,9 @@
 <img src="https://mike-schultz.github.io/materialette/assets/banner.png" alt="materialette" description="Material design">
 <p align="center"> <img src="https://mike-schultz.github.io/materialette/assets/demo.gif" alt="materialette" description="Material design"></p>
 # Materialette
-Easily access every color in [Google's material design palette](https://material.google.com/style/color.html) from your OS dock. 
+Easily access every color in [Google's material design palette](https://material.google.com/style/color.html) from your OS dock.
 
-Made using [electron](http://electron.atom.io/). 
+Made using [electron](http://electron.atom.io/).
 
 ## Install
 
@@ -11,6 +11,8 @@ Made using [electron](http://electron.atom.io/).
 1. Download the latest build from the [releases](https://github.com/mike-schultz/materialette/releases) section. Make sure to choose your operating system appropriately.
 2. Unzip the Materialette.zip.
 3. Move the Materialette.app file to the `/Applications` directory
+
+Windows and Linux versions coming soon. They should be straightforward since this is an Electron app, but I don't have the environments currently setup. Pull requests are greatly appreciated against these two versions!
 
 ## Develop
 * Install dependencies: `$ npm install`
