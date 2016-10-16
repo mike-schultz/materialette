@@ -13,11 +13,13 @@
       <div class="arrow" onclick="changeOutput()">&lt;</div>
       <div id="current-output">HEX</div>
       <div class="arrow" onclick="changeOutput()">&gt;</div>
+      <div id="hide" class="clickable" onclick="hideApp()">hide</div>
+      <div id="close" class="clickable" onclick="closeApp()">exit</div>
     </section>
 
     <div id="key">
-      <div class="color" style="background-color:#FFF; color: #000;"> white </div>
-      <div class="color" style="background-color:#000" color: #FFF> black </div>
+      <div class="color" style="background-color:#FFF; color: #000;" data-series=""> white </div>
+      <div class="color" style="background-color:#000; color: #FFF" data-series=""> black </div>
     </div>
 
     <div id="tooltip" class="hidden">

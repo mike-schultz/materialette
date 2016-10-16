@@ -5,4 +5,8 @@ const menubar = require('menubar')({
   dir: __dirname
 });
 menubar.on('ready', ()=>{
+  global.sharedObj = {
+    hide: menubar.hideWindow,
+    quit: menubar.app.quit
+  }
 });

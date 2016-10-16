@@ -372,7 +372,7 @@ document.body.addEventListener('mousemove', e => {
   if (offsetX < 0) {
     offsetX = e.clientX + 30;
   } else if (offsetX > CONTAINER_WIDTH - TOOLTIP_WIDTH) {
-    offsetX -= 60;
+    offsetX -= 65;
   }
   if (offsetY < 0) {
     offsetY = e.clientY + 25;
@@ -412,6 +412,13 @@ function changeOutput() {
     State.index = 0;
   }
   document.getElementById('current-output').innerHTML = State.output[State.index];
+}
+
+function closeApp() {
+  (require('electron').remote).getGlobal('sharedObj').quit();
+}
+function hideApp() {
+  (require('electron').remote).getGlobal('sharedObj').hide();
 }
 
 /** Utilities **/
