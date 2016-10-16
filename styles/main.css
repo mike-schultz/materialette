@@ -65,6 +65,8 @@ body {
   -ms-flex-align: center;
       align-items: center;
   text-align: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
   position: fixed;
   width: 140px;
   height: 40px;

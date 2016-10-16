@@ -58,6 +58,7 @@ body {
 }
 #tooltip {
   @include flex-center();
+  flex-direction: column;
   position: fixed;
   width: 140px;
   height: 40px;

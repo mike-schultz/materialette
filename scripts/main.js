@@ -309,24 +309,24 @@ for (let name in colors) {
   row.className = 'row';
   colors[name].forEach((val, idx) => {
     //Append the color cell
-    const cell = createCell(val[1]);
+    const cell = createCell(val[0], val[1]);
     row.appendChild(cell);
     //Create the gutter cell from the 500 series
     if (val[0] === '500') {
-      row.insertBefore(createCell(val[1], true, name), row.childNodes[0]);
+      row.insertBefore(createCell(val[0], val[1], true, name), row.childNodes[0]);
     }
   })
   container.appendChild(row);
 }
 
-function createCell(color, isGutter, name) {
+function createCell(series, color, isGutter, name) {
   const cell = document.createElement('div');
   cell.className = 'cell color';
   if (isGutter) {
     cell.innerHTML = `<span>${name}</span>`;
     cell.className += ' gutter';
   }
-
+  cell.setAttribute('data-series', series);
   cell.style.backgroundColor = color;
   cell.style.color = luminance(color, '#fff', '#444');
   return cell;
@@ -335,18 +335,20 @@ function createCell(color, isGutter, name) {
 // Track tooltip movement and display a color + info
 document.body.addEventListener('mousemove', e => {
   const tooltip = State.tooltipEle;
-  let rgb;
+  let node;
   if (e.target.className.indexOf('color') > -1) {
-    rgb = e.target.style.backgroundColor;
+    node = e.target;
   } else if (e.target.parentNode.className.indexOf('color') > -1) {
-    rgb = e.target.parentNode.style.backgroundColor;
+    node = e.target.parentNode;
   } else {
     tooltip.className = "hidden";
     State.currentColor = null;
     return;
   }
 
-  let match = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/.exec(rgb);
+  const rgb = node.style.backgroundColor;
+  const series = node.getAttribute('data-series');
+  const match = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/.exec(rgb);
   let hex = rgbToHex(match[1], match[2], match[3]);
 
   let output;
@@ -358,7 +360,9 @@ document.body.addEventListener('mousemove', e => {
       value = hex;
       break;
   }
-  tooltip.innerHTML = tooltip.style.backgroundColor = value;
+  tooltip.style.backgroundColor = value;
+  tooltip.innerHTML = `<span style='font-size:1.2em'>${value}</span>${series}`;
+
   tooltip.style.color = luminance(hex, '#fff', '#000');
   State.currentColor = value;
 
