@@ -115,14 +115,32 @@ body {
   cursor: pointer; }
 
 .arrow {
-  font-size: 20px;
-  font-weight: 500;
+  width: 0;
+  height: 0;
   cursor: pointer;
-  padding: 10px 20px;
   -webkit-user-select: none; }
+
+.arrow.left {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid white; }
+
+.arrow.right {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid white; }
+
+.arrow.left:hover {
+  border-left: 10px solid #00e5ff; }
+
+.arrow.right:hover {
+  border-right: 10px solid #00e5ff; }
 
 .clickable {
   cursor: pointer; }
+
+.clickable:hover {
+  color: #00e5ff; }
 
 .hidden {
   opacity: 0;
