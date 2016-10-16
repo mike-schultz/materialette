@@ -1,13 +1,14 @@
 {
   "name": "materialette",
   "productName": "Materialette",
-  "version": "1.0.0",
-  "description": "Material Color Palette for OSX",
+  "version": "1.0.1",
+  "description": "Material Color Palette for OSX and Linux",
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/electron .",
-    "build": "npm run build:macos",
-    "build:macos": "electron-packager . --overwrite --asar --out=dist --platform=darwin --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Materialette-darwin-x64 && zip -ryXq9 ../Materialette-${npm_package_version}.zip Materialette.app"
+    "build": "npm run build:linux",
+    "build:macos": "electron-packager . --overwrite --asar --out=dist --platform=darwin --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Materialette-darwin-x64 && zip -ryXq9 ../Materialette-${npm_package_version}.zip Materialette.app",
+    "build:linux": "electron-packager . --overwrite --asar --out=dist --platform=linux --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version}"
   },
   "keywords": [
     "material",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "electron": "^1.4.3",
+    "electron-packager": "^8.1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-sass": "^2.3.2"
