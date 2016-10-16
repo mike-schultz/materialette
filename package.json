@@ -1,12 +1,15 @@
 {
-  "name": "Materialette",
+  "name": "materialette",
+  "productName": "Materialette",
   "version": "1.0.0",
   "description": "Material Color Palette for OSX",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/electron app/",
-    "build": "npm run build:macos",
-    "build:macos": "electron-packager . --overwrite --asar --out=dist --platform=darwin --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Materialette-darwin-x64 && zip -ryXq9 ../Materialette-${npm_package_version}.zip Materialette.app"
+    "start": "./node_modules/.bin/electron .",
+    "build": "npm run build:macos && npm run build:windows",
+    "build:macos": "electron-packager . --overwrite --asar --out=dist --platform=darwin --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Materialette-darwin-x64 && zip -ryXq9 ../Materialette-${npm_package_version}.zip Materialette.app",
+    "build:windows": "electron-packager . --overwrite --asar --out=dist  --prune --platform=win32 --arch=ia32 --icon=assets/materialette.ico --version-string.ProductName=${npm_package_productName} --app-version=${npm_package_version} && cd dist/Materialette-win32-ia32 && zip -ryXq9 ../Caprine-windows-${npm_package_version}.zip *"
+
   },
   "keywords": [
     "material",
