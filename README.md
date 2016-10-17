@@ -12,7 +12,20 @@ Made using [electron](http://electron.atom.io/).
 2. Unzip the Materialette.zip.
 3. Move the Materialette.app file to the `/Applications` directory
 
-Windows and Linux versions coming soon. They should be straightforward since this is an Electron app, but I don't have the environments currently setup. Pull requests are greatly appreciated against these two versions!
+### Windows 7.1+
+1. Unzip to a desired location and run the exe
+
+### Linux (Some distros)
+1. Unzip to a desired location and run the exe
+
+Note: There are some known issues with using electron + [menubar](https://github.com/maxogden/menubar) with Linux.  
+
+#### Confirmed:
+* Ubuntu 16.04 - Confirmed by: larsgeb and mike-schultz
+  * Requires libappindicator1. Install with `sudo apt-get install libappindicator1`.
+  * Upon opening, a blank button is presented. Clicking it will load Materialette.
+
+If you are able to run the app successfully in a different distro, please update this README!
 
 ## Develop
 * Install dependencies: `$ npm install`

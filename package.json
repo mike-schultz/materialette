@@ -8,7 +8,8 @@
     "start": "./node_modules/.bin/electron .",
     "build": "npm run build:linux",
     "build:macos": "electron-packager . --overwrite --asar --out=dist --platform=darwin --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Materialette-darwin-x64 && zip -ryXq9 ../Materialette-${npm_package_version}.zip Materialette.app",
-    "build:linux": "electron-packager . --overwrite --asar --out=dist --platform=linux --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version}"
+    "build:linux": "electron-packager . --overwrite --asar --out=dist --platform=linux --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Caprine-linux-x64/ && zip -ryq9 ../Materialette-linux-${npm_package_version}.zip *",
+    "build:windows": "electron-packager . --overwrite --asar --out=dist  --prune --platform=win32 --arch=ia32 --icon=assets/materialette.ico --version-string.ProductName=${npm_package_productName} --app-version=${npm_package_version} && cd dist/Materialette-win32-ia32 && zip -ryXq9 ../Materialette-windows-${npm_package_version}.zip *"
   },
   "keywords": [
     "material",
