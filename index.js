@@ -3,7 +3,7 @@ const menubar = require('menubar')({
   height: 410,
   icon: __dirname + '/assets/IconTemplate.png',
   dir: __dirname,
-  alwaysOnTop: true
+  alwaysOnTop: false
 });
 menubar.on('ready', ()=>{
   global.sharedObj = {
