@@ -5,7 +5,9 @@ const State = {
   output: ['HEX', 'RGB'],
   index: 0,
   tooltipEle: document.getElementById('tooltip'),
-  currentColor: null
+  currentColor: null,
+  pinnedEle: document.getElementById('pinned'),
+  sharedObj: (require('electron').remote).getGlobal('sharedObj')
 };
 const colors = {
   "red": [
@@ -415,10 +417,13 @@ function changeOutput() {
 }
 
 function closeApp() {
-  (require('electron').remote).getGlobal('sharedObj').quit();
+  State.sharedObj.quit()
 }
 function hideApp() {
-  (require('electron').remote).getGlobal('sharedObj').hide();
+  State.sharedObj.hide();
+}
+function togglePinned() {
+  State.sharedObj.pinned = State.pinnedEle.checked;
 }
 
 /** Utilities **/

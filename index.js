@@ -8,6 +8,13 @@ const menubar = require('menubar')({
 menubar.on('ready', ()=>{
   global.sharedObj = {
     hide: menubar.hideWindow,
-    quit: menubar.app.quit
+    quit: menubar.app.quit,
+    pinned: false
   }
 });
+
+menubar.on('focus-lost', () => {
+  if (!global.sharedObj.pinned) {
+    menubar.hideWindow();
+  }
+})
