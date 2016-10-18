@@ -21,9 +21,10 @@ Made using [electron](http://electron.atom.io/).
 Note: There are some known issues with using electron + [menubar](https://github.com/maxogden/menubar) with Linux.  
 
 #### Confirmed:
-* Ubuntu 16.04 - Confirmed by: larsgeb and mike-schultz
+* Ubuntu 16.04
   * Requires libappindicator1. Install with `sudo apt-get install libappindicator1`.
   * Upon opening, a blank button is presented. Clicking it will load Materialette.
+* Fedora 24 
 
 If you are able to run the app successfully in a different distro, please update this README!
 
