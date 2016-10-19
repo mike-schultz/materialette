@@ -4,7 +4,8 @@ const menubar = require('menubar')({
   icon: __dirname + '/assets/IconTemplate.png',
   dir: __dirname,
   alwaysOnTop: true,
-  tooltip: "Materialette"
+  tooltip: "Materialette",
+  resizable: false
 });
 menubar.on('ready', ()=>{
   global.sharedObj = {
