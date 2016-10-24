@@ -1,7 +1,7 @@
 {
   "name": "materialette",
   "productName": "Materialette",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Material Color Palette for macOS, Windows, and Linux",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,6 @@
   "url": "https://github.com/mike-schultz",
   "license": "MIT",
   "dependencies": {
-    "menubar": "^5.1.0"
   },
   "devDependencies": {
     "electron": "^1.4.3",

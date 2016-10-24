@@ -112,7 +112,7 @@ function moveWindow() {
   let x = 0;
   let y = 0;
 
-  const screen = electron.screen.getPrimaryDisplay().bounds;
+  const screen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint());
   const trayBounds = _tray.getBounds();
 
   // Orientation is either not on top or OS is windows.
@@ -146,7 +146,9 @@ function moveWindow() {
   }
 
   // Normalize any out of bounds
-  x = (x > screen.width) ? screen.width - App.width : (x < 0) ? 0 : x;
-  y = (y > screen.height) ? screen.height - App.height : (y < 0) ? 0 : y;
+  // maxX accounts for multi-screen setups where x is the coordinate across multiple screens.
+  const maxX = screen.width + screen.x;
+   x = (x > maxX ) ? maxX - App.width : (x < 0) ? 0 : x;
+   y = (y > screen.height) ? screen.height - App.height : (y < 0) ? 0 : y;
   _window.setPosition(x, y);
 }
