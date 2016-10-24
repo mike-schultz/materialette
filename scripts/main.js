@@ -405,6 +405,12 @@ document.body.addEventListener('click', e => {
   }
 });
 
+document.onkeydown = e =>{
+    if(e.keyCode === 27) {
+      hideApp();
+    }
+};
+
 /**
  * Toggle between HEX or RGB for the tooltip + copy
  */
