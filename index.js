@@ -108,20 +108,22 @@ function toggleWindow() {
 function moveWindow() {
 
   // Determine orientation.
-  let orientation = 'top';
+  let orientation = 'top-right';
   let x = 0;
   let y = 0;
 
-  const screen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint());
+  const screen = (electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())).bounds;
   const trayBounds = _tray.getBounds();
 
   // Orientation is either not on top or OS is windows.
-  if (trayBounds.y > 10) {
+  if (process.platform === 'windows') {
     if (trayBounds.y > screen.height / 2) {
       orientation = (trayBounds.x > screen.width / 2) ? 'bottom-right' : 'bottom-left';
     } else {
       orientation = (trayBounds.x > screen.width / 2) ? 'top-right' : 'top-left';
     }
+  } else if (process.platform === 'darwin') {
+    orientation = 'top';
   }
 
   switch (orientation) {
