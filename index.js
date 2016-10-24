@@ -116,7 +116,7 @@ function moveWindow() {
   const trayBounds = _tray.getBounds();
 
   // Orientation is either not on top or OS is windows.
-  if (process.platform === 'windows') {
+  if (process.platform === 'win32') {
     if (trayBounds.y > screen.height / 2) {
       orientation = (trayBounds.x > screen.width / 2) ? 'bottom-right' : 'bottom-left';
     } else {
