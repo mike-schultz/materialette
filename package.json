@@ -1,7 +1,7 @@
 {
   "name": "materialette",
   "productName": "Materialette",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Material Color Palette for macOS, Windows, and Linux",
   "main": "index.js",
   "scripts": {
