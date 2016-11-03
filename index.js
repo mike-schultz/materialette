@@ -6,7 +6,7 @@ const App = {
   name: 'Materialette',
   width: 370,
   height: 410,
-  icon: __dirname + '/assets/IconTemplate.png',
+  icon: __dirname + '/assets/Icon.png',
   entry: __dirname + '/index.html'
 };
 
