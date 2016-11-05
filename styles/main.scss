@@ -1,4 +1,4 @@
-$cellHeight: 20px;
+i$cellHeight: 20px;
 $cellWidth: 20px;
 $gutterWidth: 90px;
 $headerHeight: 30px;
@@ -19,7 +19,7 @@ html,
 body {
   font-family: 'BlinkMacSystemFont', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
-  font-size: 13px;
+  font-size: 11px;
   margin: 0;
   width: $containerWidth;
   max-width: $containerWidth;
@@ -37,7 +37,7 @@ body {
   flex-direction: column;
   width: $containerWidth;
   height: $containerHeight - $headerHeight;
-  z-index: 2;
+  z-index: 3;
   font-size: 2em;
   background-color: rgba(0,0,0,0.7);
   transition: all 1s;
@@ -65,6 +65,7 @@ body {
   left: 0;
   padding: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 2;
 }
 #clipboard {
   position: fixed;
@@ -84,10 +85,12 @@ body {
 .cell {
   width: $cellHeight;
   height: $cellWidth;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: 0px solid rgba(0, 0, 0, 0.25);
+  line-height: 2em;
 }
 .cell:hover {
-  border: 1px solid #000;
+  z-index: 1;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .row {
   display: flex;
