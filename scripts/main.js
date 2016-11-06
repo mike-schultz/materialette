@@ -7,7 +7,8 @@ const State = {
   tooltipEle: document.getElementById('tooltip'),
   currentColor: null,
   pinnedEle: document.getElementById('pin-state'),
-  sharedObj: (require('electron').remote).getGlobal('sharedObj')
+  sharedObj: (require('electron').remote).getGlobal('sharedObj'),
+  lastTooltip: 0
 };
 const colors = {
   "red": [
@@ -367,7 +368,7 @@ document.body.addEventListener('mousemove', e => {
 
   tooltip.style.color = luminance(hex, '#fff', '#000');
   State.currentColor = value;
-
+  State.lastTooltip = performance.now();
   // Adjust bounds of tooltip to avoid edge bleeding
   let offsetX = e.clientX - TOOLTIP_WIDTH / 2;
   let offsetY = e.clientY - TOOLTIP_HEIGHT - 10;
@@ -388,6 +389,9 @@ document.body.addEventListener('mousemove', e => {
 document.body.addEventListener('click', e => {
   const tooltip = State.tooltipEle;
   const tooltipMsg = 'Copied to clipboard!';
+  State.lastTooltip = performance.now();
+  tooltip.className = "";
+
   if (State.currentColor !== null) {
     const clipboard = document.getElementById('clipboard');
     let output;
@@ -413,6 +417,12 @@ document.onkeydown = e =>{
       hideApp();
     }
 };
+
+setInterval(function(){
+  if((performance.now() - State.lastTooltip) >= 1000) {
+    tooltip.className = "hidden";
+  }
+}, 1000);
 
 /**
  * Toggle between HEX or RGB for the tooltip + copy
