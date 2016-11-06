@@ -2325,24 +2325,6 @@ body {
   width: 100%;
   position: relative; }
 
-#curtain {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  text-align: center;
-  position: fixed;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  width: 370px;
-  height: 380px;
-  z-index: 3;
-  font-size: 2em;
-  background-color: rgba(0, 0, 0, 0.7);
-  transition: all 1s; }
-
 #key {
   display: -ms-flexbox;
   display: flex;

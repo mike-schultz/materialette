@@ -386,6 +386,8 @@ document.body.addEventListener('mousemove', e => {
 
 // Copy the user's selected color to the clipboard
 document.body.addEventListener('click', e => {
+  const tooltip = State.tooltipEle;
+  const tooltipMsg = 'Copied to clipboard!';
   if (State.currentColor !== null) {
     const clipboard = document.getElementById('clipboard');
     let output;
@@ -393,11 +395,12 @@ document.body.addEventListener('click', e => {
     clipboard.select();
     try {
       var successful = document.execCommand('copy');
-      document.getElementById('color-copied').innerHTML = output;
-      const curtain = document.getElementById('curtain');
-      curtain.className = "";
+      let prevValue = tooltip.innerHTML;
+      tooltip.innerHTML = "Copied to clipboard!";
       setTimeout(function() {
-        curtain.className = "hidden";
+        if (tooltip.innerHTML === tooltipMsg) {
+          tooltip.innerHTML = prevValue;
+        }
       }, 1000);
     } catch (err) {
       console.log(err);

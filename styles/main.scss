@@ -34,17 +34,6 @@ body {
   width: 100%;
   position: relative;
 }
-#curtain {
-  @include flex-center();
-  position: fixed;
-  flex-direction: column;
-  width: $containerWidth;
-  height: $containerHeight - $headerHeight;
-  z-index: 3;
-  font-size: 2em;
-  background-color: rgba(0,0,0,0.7);
-  transition: all 1s;
-}
 #key {
   display: flex;
   position: absolute;
