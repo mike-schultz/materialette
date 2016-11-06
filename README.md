@@ -1,5 +1,5 @@
-<img src="https://mike-schultz.github.io/materialette/assets/banner.png" alt="materialette" description="Material design">
-<p align="center"> <img src="https://mike-schultz.github.io/materialette/assets/demo.gif" alt="materialette" description="Material design"></p>
+<img src="https://mike-schultz.github.io/materialette/assets/banner-sm.png" alt="materialette" description="Material design">
+<p align="center"> <img src="https://mike-schultz.github.io/materialette/assets/app.gif" alt="materialette" description="Material design"></p>
 # Materialette
 Easily access every color in [Google's material design palette](https://material.google.com/style/color.html) from your OS dock.
 
@@ -18,7 +18,7 @@ Made using [electron](http://electron.atom.io/).
 ### Linux (Some distros)
 1. Unzip to a desired location and run the exe
 
-Note: There are some known issues with using electron + [menubar](https://github.com/maxogden/menubar) with Linux.
+Note: There are some known issues with using electron + Tray with Linux.
 
 #### Confirmed:
 * Ubuntu 16.04
