@@ -2,11 +2,11 @@ const CONTAINER_WIDTH = 370;
 const TOOLTIP_WIDTH = 140;
 const TOOLTIP_HEIGHT = 40;
 const State = {
-  output: ['HEX', 'RGB'],
+  output: ['hex', 'rgb'],
   index: 0,
   tooltipEle: document.getElementById('tooltip'),
   currentColor: null,
-  pinnedEle: document.getElementById('pinned'),
+  pinnedEle: document.getElementById('pin-state'),
   sharedObj: (require('electron').remote).getGlobal('sharedObj')
 };
 const colors = {
@@ -355,10 +355,10 @@ document.body.addEventListener('mousemove', e => {
 
   let output;
   switch (State.output[State.index]) {
-    case 'RGB':
+    case 'rgb':
       value = rgb;
       break;
-    case 'HEX':
+    case 'hex':
       value = hex;
       break;
   }

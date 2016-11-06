@@ -1,4 +1,7 @@
-i$cellHeight: 20px;
+$fa-font-path: "../node_modules/font-awesome/fonts" !default;
+@import "../node_modules/font-awesome/scss/font-awesome";
+
+$cellHeight: 20px;
 $cellWidth: 20px;
 $gutterWidth: 90px;
 $headerHeight: 30px;
@@ -19,7 +22,7 @@ html,
 body {
   font-family: 'BlinkMacSystemFont', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
-  font-size: 11px;
+  font-size: 12px;
   margin: 0;
   width: $containerWidth;
   max-width: $containerWidth;
@@ -73,20 +76,58 @@ body {
   top: -$containerWidth;
 }
 #controls {
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: #455A64;
+  background-color: #263238;
   height: $headerHeight;
-  font-size: 14px;
+  font-size: 18px;
   padding: 2px;
 }
+
+#controls .col {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#controls .col * {
+  margin: 0 2px;
+}
+
+#pin-state {
+  display: none;
+}
+#pin-state:checked ~ label {
+  color: #00b8d4;
+}
+#pin:hover {
+  color: #84ffff;
+}
+#hide:hover {
+  color: #ffea00;
+}
+#close:hover {
+  color: #ff1744;
+}
+
+#mode-selector {
+  display: flex;
+}
+#mode-selector:hover {
+  color: #00e5ff;
+}
+#current-output {
+  font-size: 18px;
+}
+
 .cell {
   width: $cellHeight;
   height: $cellWidth;
   border: 0px solid rgba(0, 0, 0, 0.25);
-  line-height: 2em;
+  line-height: 1.5em;
 }
 .cell:hover {
   z-index: 1;
@@ -127,9 +168,6 @@ body {
 }
 .clickable {
   cursor: pointer;
-}
-.clickable:hover {
-  color: #00e5ff;
 }
 .hidden {
   opacity: 0;

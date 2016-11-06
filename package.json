@@ -19,6 +19,8 @@
   "url": "https://github.com/mike-schultz",
   "license": "MIT",
   "dependencies": {
+    "font-awesome": "^4.7.0",
+    "hint.css": "^2.4.0"
   },
   "devDependencies": {
     "electron": "^1.4.3",

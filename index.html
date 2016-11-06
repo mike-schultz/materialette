@@ -4,17 +4,25 @@
 <head>
   <title>Materialette</title>
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="node_modules/hint.css/hint.css">
 </head>
 
 <body>
   <div id="container">
     <section id="controls">
-      <div class="arrow right" onclick="changeOutput()"></div>
-      <div id="current-output">HEX</div>
-      <div class="arrow left" onclick="changeOutput()"></div>
-      <label class="clickable"><input id="pinned" type="checkbox" onChange="togglePinned()"/> pinned</label>
-      <div id="hide" class="clickable" onclick="hideApp()">hide</div>
-      <div id="close" class="clickable" onclick="closeApp()">exit</div>
+      <div class="col">
+        <img src="assets/Icon.png">
+        <div id="mode-selector" class="clickable hint--bottom" aria-label="Toggle modes" onclick="changeOutput()">
+          <div id="current-output">hex</div>
+          <div><i class="fa fa-retweet"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <input id="pin-state" type="checkbox" onChange="togglePinned()" />
+        <label id="pin" for="pin-state" class="clickable hint--bottom-left" aria-label="Pin to keep visible"><i class="fa fa-thumb-tack"></i></label>
+        <div id="hide" class="clickable hint--bottom" aria-label="Hide" onclick="hideApp()"><i class="fa fa-close"></i></div>
+        <div id="close" class="clickable hint--bottom-left" aria-label="Quit" onclick="closeApp()"><i class="fa fa-power-off"></i></div>
+      </div>
     </section>
 
     <div id="key">
