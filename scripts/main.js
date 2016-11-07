@@ -8,7 +8,8 @@ const State = {
   currentColor: null,
   pinnedEle: document.getElementById('pin-state'),
   sharedObj: (require('electron').remote).getGlobal('sharedObj'),
-  lastTooltip: 0
+  lastTooltip: 0,
+  tooltipLock: false
 };
 const colors = {
   "red": [
@@ -364,11 +365,12 @@ document.body.addEventListener('mousemove', e => {
       break;
   }
   tooltip.style.backgroundColor = value;
-  tooltip.innerHTML = `<span style='font-size:1.2em'>${value}</span>${series}`;
+  if (!State.tooltipLock) {
+    tooltip.innerHTML = `<span style='font-size:1.2em'>${value}</span>${series}`;
+  }
 
   tooltip.style.color = luminance(hex, '#fff', '#000');
   State.currentColor = value;
-  State.lastTooltip = performance.now();
   // Adjust bounds of tooltip to avoid edge bleeding
   let offsetX = e.clientX - TOOLTIP_WIDTH / 2;
   let offsetY = e.clientY - TOOLTIP_HEIGHT - 10;
@@ -387,6 +389,7 @@ document.body.addEventListener('mousemove', e => {
 
 // Copy the user's selected color to the clipboard
 document.body.addEventListener('click', e => {
+  State.tooltipLock = true;
   const tooltip = State.tooltipEle;
   const tooltipMsg = 'Copied to clipboard!';
   State.lastTooltip = performance.now();
@@ -402,6 +405,7 @@ document.body.addEventListener('click', e => {
       let prevValue = tooltip.innerHTML;
       tooltip.innerHTML = "Copied to clipboard!";
       setTimeout(function() {
+        State.tooltipLock = false;
         if (tooltip.innerHTML === tooltipMsg) {
           tooltip.innerHTML = prevValue;
         }
