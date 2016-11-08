@@ -350,6 +350,7 @@ document.body.addEventListener('mousemove', e => {
     return;
   }
 
+  State.lastTooltip = performance.now();
   const rgb = node.style.backgroundColor;
   const series = node.getAttribute('data-series');
   const match = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/.exec(rgb);
@@ -423,10 +424,10 @@ document.onkeydown = e =>{
 };
 
 setInterval(function(){
-  if((performance.now() - State.lastTooltip) >= 1000) {
+  if((performance.now() - State.lastTooltip) >= 2000) {
     tooltip.className = "hidden";
   }
-}, 1000);
+}, 2000);
 
 /**
  * Toggle between HEX or RGB for the tooltip + copy
