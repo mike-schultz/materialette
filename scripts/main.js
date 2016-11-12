@@ -390,13 +390,12 @@ document.body.addEventListener('mousemove', e => {
 
 // Copy the user's selected color to the clipboard
 document.body.addEventListener('click', e => {
-  State.tooltipLock = true;
-  const tooltip = State.tooltipEle;
-  const tooltipMsg = 'Copied to clipboard!';
-  State.lastTooltip = performance.now();
-  tooltip.className = "";
-
   if (State.currentColor !== null) {
+    State.tooltipLock = true;
+    const tooltip = State.tooltipEle;
+    const tooltipMsg = 'Copied to clipboard!';
+    State.lastTooltip = performance.now();
+    tooltip.className = "";
     const clipboard = document.getElementById('clipboard');
     let output;
     clipboard.innerHTML = output = State.currentColor;
