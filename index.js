@@ -10,29 +10,34 @@ const App = {
   entry: __dirname + '/index.html'
 };
 
-const contextMenu = electron.Menu.buildFromTemplate([{
-  label: 'About',
-  click() {
-    electron.dialog.showMessageBox({
-      title: "Materialette",
-      type: "info",
-      message: "Material Color Palette for macOS, Windows, and Linux",
-      buttons: ["Close"]
-    });
+const contextMenu = electron.Menu.buildFromTemplate([
+  {
+    label: 'About',
+    click() {
+      electron.dialog.showMessageBox({
+        title: "Materialette",
+        type: "info",
+        message: "Material Color Palette for macOS, Windows, and Linux",
+        buttons: ["Close"]
+      });
+    }
+  },
+  {
+    label: 'Website',
+    click() {
+      electron.shell.openExternal("https://github.com/mike-schultz/materialette");
+    }
+  },
+  {
+    type: 'separator'
+  },
+  {
+    label: 'Quit',
+    click() {
+      app.quit();
+    }
   }
-}, {
-  label: 'Website',
-  click() {
-    electron.shell.openExternal("https://github.com/mike-schultz/materialette");
-  }
-}, {
-  type: 'separator'
-}, {
-  label: 'Quit',
-  click() {
-    app.quit();
-  }
-}]);
+]);
 
 let _tray;
 let _window;
