@@ -104,6 +104,7 @@ body {
 
 #mode-selector {
   display: flex;
+  user-select: none;
 }
 #mode-selector:hover {
   color: #00e5ff;

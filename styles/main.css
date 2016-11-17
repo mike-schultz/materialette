@@ -2413,7 +2413,11 @@ body {
 
 #mode-selector {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 #mode-selector:hover {
   color: #00e5ff; }
