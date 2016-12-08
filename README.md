@@ -5,12 +5,13 @@ Easily access every color in [Google's material design palette](https://material
 
 Made using [electron](http://electron.atom.io/).
 
-## Install
+[![Github All Releases](https://img.shields.io/github/downloads/mike-schultz/materialette/total.svg)]()
 
+## Install
+Download the latest build from the [releases](https://github.com/mike-schultz/materialette/releases) section. Make sure to choose your operating system appropriately.
 ### macOS
-1. Download the latest build from the [releases](https://github.com/mike-schultz/materialette/releases) section. Make sure to choose your operating system appropriately.
-2. Unzip the Materialette.zip.
-3. Move the Materialette.app file to the `/Applications` directory
+1. Unzip the Materialette.zip.
+2. Move the Materialette.app file to the `/Applications` directory
 
 ### Windows 7.1+
 1. Unzip to a desired location and run the exe
