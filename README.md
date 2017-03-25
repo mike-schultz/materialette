@@ -17,15 +17,19 @@ Download the latest build from the [releases](https://github.com/mike-schultz/ma
 1. Unzip to a desired location and run the exe
 
 ### Linux (Some distros)
-1. Unzip to a desired location and run the exe
+1. Unzip to a desired location
+2. open terminal
+3. `cd` to the unzipped directory
+4. run `./Materialette`
 
 Note: There are some known issues with using electron + Tray with Linux.
 
 #### Confirmed:
-* Ubuntu 16.04
+* **Ubuntu 16.04**
   * Requires libappindicator1. Install with `sudo apt-get install libappindicator1`.
   * Upon opening, a blank button is presented. Clicking it will load Materialette.
-* Fedora 24
+* **Fedora 24**
+  * Requires libappindicator1. Install with `sudo dnf install libappindicator1`.
 
 If you are able to run the app successfully in a different distro, please update this README!
 
