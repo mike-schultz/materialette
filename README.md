@@ -1,6 +1,7 @@
 <img src="https://mike-schultz.github.io/materialette/assets/banner-sm.png" alt="materialette" description="Material design">
 <p align="center"> <img src="https://mike-schultz.github.io/materialette/assets/app.gif" alt="materialette" description="Material design"></p>
-# Materialette
+## Materialette
+
 Easily access every color in [Google's material design palette](https://material.google.com/style/color.html) from your OS dock.
 
 Made using [electron](http://electron.atom.io/).
