@@ -1,5 +1,6 @@
 <img src="https://mike-schultz.github.io/materialette/assets/banner-sm.png" alt="materialette" description="Material design">
-<p align="center"> <img src="https://mike-schultz.github.io/materialette/assets/app.gif" alt="materialette" description="Material design"></p>
+<p align="center"><img src="https://mike-schultz.github.io/materialette/assets/app.gif" alt="materialette" description="Material design"></p>
+
 # Materialette
 Easily access every color in [Google's material design palette](https://material.google.com/style/color.html) from your OS dock.
 
@@ -41,4 +42,4 @@ If you're using [nvm](https://github.com/creationix/nvm#nvmrc), run the command 
 * Install dependencies with `$ npm install` or `$ yarn`. A yarn.lock is included.
 * Compile SCSS -> CSS `$ gulp sass` or `$ gulp sass:watch`
 * Start the application with `$ npm start `
-* Build the application with  `$ npm run build`
+* Build the application with `$ npm run build`
