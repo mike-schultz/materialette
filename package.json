@@ -5,11 +5,13 @@
   "description": "Material Color Palette for macOS, Windows, and Linux",
   "main": "index.js",
   "scripts": {
+    "postinstall": "electron-builder install-app-deps",
     "start": "./node_modules/.bin/electron .",
-    "build": "npm run build:macos && npm run build:linux && npm run build:windows",
+    "build": "npm run build:macos && npm run build:linux && npm run build:snap && npm run build:windows",
     "build:macos": "electron-packager . --overwrite --asar --out=dist --platform=darwin --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Materialette-darwin-x64 && zip -ryXq9 ../Materialette-macOS-${npm_package_version}.zip Materialette.app",
     "build:linux": "electron-packager . --overwrite --asar --out=dist --platform=linux --app-bundle-id=com.mikeschultz.materialette --icon=assets/materialette.icns --app-version=${npm_package_version} && cd dist/Materialette-linux-x64/ && zip -ryq9 ../Materialette-linux-${npm_package_version}.zip *",
-    "build:windows": "electron-packager . --overwrite --asar --out=dist  --prune --platform=win32 --arch=ia32 --icon=assets/materialette.ico --version-string.ProductName=${npm_package_productName} --app-version=${npm_package_version} && cd dist/Materialette-win32-ia32 && zip -ryXq9 ../Materialette-windows-${npm_package_version}.zip *"
+    "build:windows": "electron-packager . --overwrite --asar --out=dist  --prune --platform=win32 --arch=ia32 --icon=assets/materialette.ico --version-string.ProductName=${npm_package_productName} --app-version=${npm_package_version} && cd dist/Materialette-win32-ia32 && zip -ryXq9 ../Materialette-windows-${npm_package_version}.zip *",
+    "build:snap": "build -l snap"
   },
   "keywords": [
     "material",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "electron": "^1.4.3",
+    "electron-builder": "^20.29.0",
     "electron-packager": "^8.1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
