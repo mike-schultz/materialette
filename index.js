@@ -52,6 +52,8 @@ app.on('window-all-closed', () => {
 function createWindow() {
   if (app.dock) {
     app.dock.hide()
+  } else if (process.platform === 'win32') {
+    app.setSkipTaskbar(true)
   }
   // Tray
   _tray = new Tray(App.icon);
